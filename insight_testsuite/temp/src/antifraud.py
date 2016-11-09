@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-""" Fraud Detection Using Social-network Information
+""" Transaction Fraud Detection Using Social-network Information
 Author: Shifan Mao
 Date: 11-06-16 """
 
@@ -20,8 +20,7 @@ def train(input_batch):
     print('Step # 0: Start loading trans. history from '+input_batch+' ...')
 
     with open(input_batch) as f:
-        next(f)
-
+        next(f)  # skip header
         for i, l in enumerate(f):
             row = l.split(',')
             id1,id2 = row[1:3]
@@ -42,13 +41,11 @@ def test(input_stream,output_out1,G,feat=1):
     
     fout1 = open(output_out1, 'w')
     with open(input_stream) as f:
-        next(f)
+        next(f)  #skip header
         for i, l in enumerate(f):
             row = l.split(',')
             id1,id2 = row[1:3]
             
-            if (i%1e5==0):
-                print " Processing Line #%d..." %i
             result = 'unverified\n'
             if (feat==1):
                 if G.has_edge(id1,id2):
@@ -58,7 +55,6 @@ def test(input_stream,output_out1,G,feat=1):
                 if (has_nodes):
                     has_path = nx.has_path(G,id1,id2)
                     if (has_path):
-#                        path_length,path = nx.bidirectional_dijkstra(G,id1,id2)
                         path_length = nx.shortest_path_length(G,source=id1,target=id2)
                         
                         if (feat==2):

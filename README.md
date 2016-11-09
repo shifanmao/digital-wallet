@@ -1,11 +1,3 @@
-# Table of Contents
-
-1. [Summary] (README.md#implementation)
-2. [Requirements] (README.md#requirements)
-3. [Usage] (README.md##usage)
-4. [Implementation] (README.md#implementation)
-5. [Results] (README.md#results)
-
 ##Summary
 This is a submission to the code challenge of Insight Data Engineering
 originial repo: `https://github.com/InsightDataScience/digital-wallet`
@@ -33,6 +25,14 @@ To achieve maximum efficiency of fraud detection, I used the shortest path searc
 
 ##Results
 To have a sense of the structure of past transactions, I first generated a example drawing of network of users with transaction history based on the largest connected graph of the first 5000 transaction history.
-<img src="./src/network.png" width="500">
+<img src="./src/network.png" width="1000">
+One interesting feature of the network is that there are a few users that have frequent transactions with his neighbors. These users can be potential 'hubs' in determining the connectivity between two arbitrary users in the network.
+
+Next we implement the search algorithm to determine the degree of connectivitiy between users who have new transactions.
+To verify the search algorithm is correctly implemented, I devised a network with the following graphical representation.
+<img src="./insight_testsuite/tests/test-2-paymo-trans/network.png" width="1000">
+which has some essential features such as 'unconnected' users, users with 1-4 degree of connectivity, and connectivity with different paths. The tests are passed and recorded in the subfolder `insight_testsuite/tests/test-2-paymo-trans/`.
 
 ##Discussion
+
+##Possible new implementations
