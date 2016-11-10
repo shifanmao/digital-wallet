@@ -40,4 +40,5 @@ In the future, fraud detection can be based on more features, such as time of tr
 * issue warning when transaction is of large amount.
 
 [1] Schroeder et al., Automated Criminal Link Analysis Based on Domain Knowledge, Journal of the American Society for Information Science and Technology, 58:6 (842), 2007.
+
 [2] G.K. Palshikar, The Hidden Truth – Frauds and Their Control: A Critical Application for Business Intelligence, Intelligent Enterprise, vol. 5, no. 9, 28 May 2002, pp. 46–51.
