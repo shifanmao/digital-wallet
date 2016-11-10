@@ -23,7 +23,7 @@ The outputs `output1.txt`, `output2.txt`, and `output3.txt` are results of fraud
 ##Implementation
 To achieve maximum efficiency of fraud detection, I used the shortest path search in NetworkX. This method uses a bidirectional search algorithm.
 
-##Results
+##Results and Discussion
 To have a sense of the structure of past transactions, I first generated a example drawing of network of users with transaction history based on the largest connected graph of the first 5000 transaction history.
 <img src="./src/network.png" width="1000">
 One interesting feature of the network is that there are a few users that have frequent transactions with his neighbors. These users can be potential 'hubs' in determining the connectivity between two arbitrary users in the network.
@@ -33,6 +33,8 @@ To verify the search algorithm is correctly implemented, I devised a network wit
 <img src="./insight_testsuite/tests/test-2-paymo-trans/network.png" width="1000">
 which has some essential features such as 'unconnected' users, users with 1-4 degree of connectivity, and connectivity with different paths. The tests are passed and recorded in the subfolder `insight_testsuite/tests/test-2-paymo-trans/`.
 
-##Discussion
-
 ##Possible new implementations
+In the future, fraud detection can be based on more features, such as time of transaction or messages. Some new possible implementations include:
+* find similarity between users based on natural language processing (NLP) of users' messages.
+* find time-series analysis to detect user's transaction during unusual time
+* issue warning when transaction is of large amount
