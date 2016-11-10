@@ -34,7 +34,10 @@ To verify the search algorithm is correctly implemented, I devised a network wit
 which has some essential features such as 'unconnected' users, users with 1-4 degree of connectivity, and connectivity with different paths. The tests are passed and recorded in the subfolder `insight_testsuite/tests/test-2-paymo-trans/`.
 
 ##Possible new implementations
-In the future, fraud detection can be based on more features, such as time of transaction or messages. Some new possible implementations include:
+In the future, fraud detection can be based on more features, such as time of transaction or messages. Some new possible implementations include [1,2]:
 * find similarity between users based on natural language processing (NLP) of users' messages.
-* find time-series analysis to detect user's transaction during unusual time
-* issue warning when transaction is of large amount
+* find time-series analysis to detect user's transaction during unusual time.
+* issue warning when transaction is of large amount.
+
+[1] Schroeder et al., Automated Criminal Link Analysis Based on Domain Knowledge, Journal of the American Society for Information Science and Technology, 58:6 (842), 2007.
+[2] G.K. Palshikar, The Hidden Truth – Frauds and Their Control: A Critical Application for Business Intelligence, Intelligent Enterprise, vol. 5, no. 9, 28 May 2002, pp. 46–51.
